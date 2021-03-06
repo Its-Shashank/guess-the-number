@@ -13,19 +13,19 @@ import Input from "../components/Input";
 import Number from "../components/Number";
 import colors from "../utils/colors";
 
-const confirmedOutput = (confirmed, selectedValue) => {
+const confirmedOutput = (confirmed, selectedValue, onStartGame) => {
   if (confirmed) {
     return (
       <Card style={styles.summaryContainer}>
         <Text>You selected</Text>
         <Number>{selectedValue}</Number>
-        <Button title='START GAME!' />
+        <Button title='START GAME!' onPress={onStartGame} />
       </Card>
     );
   }
 };
 
-function StartGameScreen() {
+function StartGameScreen(props) {
   const [value, setValue] = useState("");
   const [confirmed, setConfirmed] = useState(false);
   const [selectedValue, setSelectedValue] = useState();
@@ -81,7 +81,7 @@ function StartGameScreen() {
             </View>
           </View>
         </Card>
-        {confirmedOutput(confirmed, selectedValue)}
+        {confirmedOutput(confirmed, selectedValue, props.onStartGame)}
       </View>
     </TouchableWithoutFeedback>
   );

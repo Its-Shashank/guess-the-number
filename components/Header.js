@@ -14,10 +14,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.primary,
     width: "100%",
-    paddingVertical: 50,
+    paddingVertical: 40,
   },
   font: {
     fontSize: 20,
+    color: "white",
+    fontWeight: "700",
   },
 });
 export default Header;
